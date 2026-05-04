@@ -1,0 +1,35 @@
+{{- define "title" -}}
+  {{- cond (.Param "capitalizeTitles") (title .Title) .Title -}}
+  {{- if .Site.Params.withSiteTitle }} {{ .Site.Params.titleDelimiter }} {{ .Site.Title }}{{- end -}}
+{{- end -}}
+
+{{- define "content" -}}
+  <section class="tags-showcase">
+    <div class="tags-hero">
+      <span class="tags-kicker">Tag Archive</span>
+      <h1 class="single-title">{{ T "tags" }}</h1>
+      <p class="single-subtitle">把博客里的主题整理成一面更轻盈的索引墙，方便按兴趣继续逛下去。</p>
+    </div>
+
+    <div class="tags-summary">
+      <div class="tags-summary-card">
+        <span class="tags-summary-label">标签总数</span>
+        <strong>{{ len .Site.Taxonomies.tags }}</strong>
+      </div>
+      <div class="tags-summary-card">
+        <span class="tags-summary-label">文章关联</span>
+        <strong>{{ len .Site.RegularPages }}</strong>
+      </div>
+    </div>
+
+    <div class="tags-grid">
+      {{- range .Site.Taxonomies.tags.ByCount -}}
+        <a href='{{ partial "function/escapeurl.html" .Page.RelPermalink }}' class="tag-card">
+          <span class="tag-card-dot"></span>
+          <span class="tag-card-name">{{ .Page.LinkTitle }}</span>
+          <span class="tag-card-count">{{ .Count }}</span>
+        </a>
+      {{- end -}}
+    </div>
+  </section>
+{{- end -}}

@@ -1,0 +1,89 @@
+{{- define "title" -}}
+  {{- cond (.Param "capitalizeTitles") (title .Title) .Title -}}
+  {{- if .Site.Params.withSiteTitle }} {{ .Site.Params.titleDelimiter }} {{ .Site.Title }}{{- end -}}
+{{- end -}}
+
+{{- define "content" -}}
+  {{- $params := partial "function/params.html" -}}
+  {{- $projects := hugo.Data.projects -}}
+  <article class="page single special opensource-shell">
+    <div class="header opensource-hero">
+      <span class="opensource-kicker">Open Source</span>
+      <h1 class="single-title">{{- cond (.Param "capitalizeTitles") (title .Title) .Title -}}</h1>
+      {{- with $params.subtitle -}}<p class="single-subtitle">{{ . | $.RenderString }}</p>{{- end -}}
+    </div>
+
+    <div class="opensource-overview">
+      <div class="opensource-overview-card">
+        <span class="opensource-overview-label">公开项目</span>
+        <strong>{{ len $projects.active }}</strong>
+      </div>
+      <div class="opensource-overview-card">
+        <span class="opensource-overview-label">孵化方向</span>
+        <strong>{{ len $projects.incubating }}</strong>
+      </div>
+      <div class="opensource-overview-card">
+        <span class="opensource-overview-label">页面定位</span>
+        <strong>长期更新</strong>
+      </div>
+    </div>
+
+    <div class="content" id="content">
+      {{- dict "Content" .Content "Ruby" $params.ruby "Fraction" $params.fraction "Fontawesome" $params.fontawesome | partial "function/content.html" | safeHTML -}}
+    </div>
+
+    <section class="opensource-section">
+      <div class="opensource-section-head">
+        <h2>项目陈列</h2>
+        <p>优先展示我准备认真维护、愿意持续补充文档和演进记录的项目。</p>
+      </div>
+      <div class="opensource-grid">
+        {{- range $projects.active -}}
+          <article class="project-card{{ if .featured }} project-card-featured{{ end }}">
+            <div class="project-card-top">
+              <div>
+                <h3 class="project-card-title">{{ .name }}</h3>
+                <span class="project-card-status">{{ .status }}</span>
+              </div>
+              <span class="project-card-year">{{ .year }}</span>
+            </div>
+            <p class="project-card-summary">{{ .summary }}</p>
+            <div class="project-card-tags">
+              {{- range .tags -}}
+                <span class="project-chip">{{ . }}</span>
+              {{- end -}}
+            </div>
+            <div class="project-card-actions">
+              {{- if .repo -}}
+                <a href="{{ .repo }}" target="_blank" rel="external noopener">仓库</a>
+              {{- else -}}
+                <span class="project-link-disabled">仓库稍后公开</span>
+              {{- end -}}
+              {{- if .demo -}}
+                <a href="{{ .demo }}" target="_blank" rel="external noopener">预览</a>
+              {{- end -}}
+            </div>
+          </article>
+        {{- end -}}
+      </div>
+    </section>
+
+    <section class="opensource-section">
+      <div class="opensource-section-head">
+        <h2>正在孵化</h2>
+        <p>这些方向还没有长成正式仓库，但已经足够值得被记上一笔。</p>
+      </div>
+      <div class="incubating-list">
+        {{- range $projects.incubating -}}
+          <article class="incubating-item">
+            <div class="incubating-head">
+              <h3>{{ .name }}</h3>
+              <span>{{ .status }}</span>
+            </div>
+            <p>{{ .summary }}</p>
+          </article>
+        {{- end -}}
+      </div>
+    </section>
+  </article>
+{{- end -}}

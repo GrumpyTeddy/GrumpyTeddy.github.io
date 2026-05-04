@@ -1,0 +1,53 @@
+{{- define "title" -}}
+  {{- cond (.Param "capitalizeTitles") (title .Title) .Title -}}
+  {{- if .Site.Params.withSiteTitle }} {{ .Site.Params.titleDelimiter }} {{ .Site.Title }}{{- end -}}
+{{- end -}}
+
+{{- define "content" -}}
+  {{- $params := partial "function/params.html" -}}
+  <article class="page single special friends links-shell">
+    <div class="header links-hero">
+      <span class="links-hero-kicker">Mutual Links</span>
+      <h1 class="single-title">{{- cond (.Param "capitalizeTitles") (title .Title) .Title -}}</h1>
+      {{- with $params.subtitle -}}<p class="single-subtitle">{{ . | $.RenderString }}</p>{{- end -}}
+    </div>
+
+    <div class="links-intro">
+      <div class="links-intro-card">
+        <h2>一起串门</h2>
+        <p>这里收纳的是愿意彼此抵达的小站。每一张卡片都保留头像、名字和一句简短介绍，既方便跳转，也能让页面本身更像一个安静的收藏夹。</p>
+      </div>
+      <div class="links-intro-card">
+        <h2>如何交换</h2>
+        <p>如果你也想加入这页，最简单的方式是在留言页留下站点信息。等评论系统启用后，这个流程也会自然地串起来。</p>
+      </div>
+    </div>
+
+    <div class="friend-links">
+      {{ range $index, $friend := hugo.Data.friends }}
+        <a class="friend-link" title="{{ $friend.description | safeHTML }}" href="{{ $friend.url | safeURL }}" rel="external noopener" target="_blank">
+          <div class="friend-link-glow"></div>
+          <div class="friend-link-top">
+            {{ if $friend.avatar }}
+              {{- $image := dict "Src" $friend.avatar "Alt" $friend.nickname "Title" $friend.description "Class" "friend-avatar" -}}
+              {{- partial "plugin/image.html" $image -}}
+            {{ else }}
+              <div class="friend-avatar friend-avatar-fallback">{{ add 1 $index }}</div>
+            {{ end }}
+            <span class="friend-badge">友链</span>
+          </div>
+          <div class="friend-meta">
+            <span class="friend-nickname">{{ $friend.nickname }}</span>
+            <span class="friend-description">{{ $friend.description }}</span>
+          </div>
+        </a>
+      {{ end }}
+    </div>
+
+    <div class="content" id="content">
+      {{- dict "Content" .Content "Ruby" $params.ruby "Fraction" $params.fraction "Fontawesome" $params.fontawesome | partial "function/content.html" | safeHTML -}}
+    </div>
+
+    {{- partial "single/comment.html" . -}}
+  </article>
+{{- end -}}

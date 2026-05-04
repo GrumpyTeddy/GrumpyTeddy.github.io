@@ -1,0 +1,23 @@
+active:
+  - name: Coming Soon
+    repo: ""
+    demo: ""
+    status: 筹备中
+    year: 2026
+    summary: 第一个正式公开维护的项目正在整理中，之后会放上完整说明、技术栈和仓库地址。
+    tags:
+      - Hugo
+      - C++
+      - AI
+    featured: true
+
+incubating:
+  - name: 图形学练习集
+    status: 规划中
+    summary: 计划把图形学学习过程中的小实验、推导与实现整理成可复用仓库。
+  - name: 学习型 AI 工具
+    status: 构思中
+    summary: 可能会围绕课程笔记、知识串联或小型推理工具做一些个人向产品尝试。
+  - name: 游戏引擎方向小项目
+    status: 储备中
+    summary: 更偏底层和系统性的练手项目，等基础更扎实之后再公开成型版本。

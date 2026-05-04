@@ -1,0 +1,10 @@
+// ==============================
+// Override Variables
+// 覆盖变量
+// ==============================
+
+// 全局字体设置为 Keinann Maru POP（中文版）
+$global-font-family: 'KeinannMaruPOP', system-ui, -apple-system, BlinkMacSystemFont, PingFang SC, Microsoft YaHei UI, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, Helvetica, Arial, sans-serif !default;
+
+// 头部标题字体
+$header-title-font-family: 'KeinannMaruPOP', $global-font-family !default;
