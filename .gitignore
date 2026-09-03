@@ -6,3 +6,5 @@ resources
 # hugo命令
 hugo.exe
 
+
+.vscode/
