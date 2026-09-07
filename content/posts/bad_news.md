@@ -3,7 +3,7 @@ title: 悼念录
 subtitle: 某个伤心事激起了我的更新欲
 date: 2026-07-27T07:48:30+08:00
 slug: 79e9558
-draft: false
+draft: true
 author:
   name: 二哈
   link: https://github.com/GrumpyTeddy

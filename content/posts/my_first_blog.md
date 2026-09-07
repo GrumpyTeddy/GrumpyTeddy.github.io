@@ -16,7 +16,7 @@ keywords:
   - self-introduction
   - graphics
   - ai
-comment: false
+comment: true
 weight: 0
 tags:
   - hugo
