@@ -3,7 +3,7 @@ title: 广州大学研究生生活-第一天
 subtitle: 新生报到+组内的简单了解
 date: 2026-09-03T23:59:50+08:00
 slug: e9dc1bf
-draft: true
+draft: false
 author:
   name: 二哈
   link: https://github.com/GrumpyTeddy
