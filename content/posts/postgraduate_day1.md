@@ -34,7 +34,7 @@ repost:
 
 # See details front matter: https://fixit.lruihao.cn/documentation/content-management/introduction/#front-matter
 ---
-
+<!--more-->
 ## 本文简述
 距离上次更新依旧是一个多月，依旧拖延症这块，鉴于今天研究生报道，体验比本科好，好评++。
 这次主要跟新几个内容：
@@ -79,4 +79,4 @@ repost:
 ## 小组生活
 选工位真的是一个大活，费了老鼻子劲儿选了一个还不错的工位。另外就是整个大组公用一个三卡的A6000服务器。
 使用人员可能有点多，另外好像并没有配备文档，所以我打算自己整理一个相关文档。肯定可以方便自己。
-<!--more-->
+
