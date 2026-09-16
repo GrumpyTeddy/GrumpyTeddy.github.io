@@ -21,7 +21,7 @@ markup:
     <div class="about-section">
       <h2 class="section-title">👤 个人简介</h2>
       <p class="section-text">
-        大家好！我是二哈，一个热爱技术的学习者。我相信技术的力量，希望通过不断学习和实践，成为一名优秀的开发者。
+        该写点什么比较好呢。
       </p>
     </div>
     
@@ -58,7 +58,7 @@ markup:
         <div class="learning-card">
           <div class="card-icon">💻</div>
           <h3>C++</h3>
-          <p>C++基础还可以，打算阅读《Effective C++》和《Effective STL》</p>
+          <p>C++基础还可以，打算再次阅读《Effective C++》和《Effective STL》</p>
         </div>
         <div class="learning-card">
           <div class="card-icon">🎨</div>
@@ -68,7 +68,7 @@ markup:
         <div class="learning-card">
           <div class="card-icon">🤖</div>
           <h3>AI</h3>
-          <p>目前相当于没有基础，打算按照这个路线学习：李沐 → CS224N → CS336</p>
+          <p>目前相当于没有基础，打算按照这个路线学习：CS221 → CS224N → CS336</p>
         </div>
       </div>
     </div>
@@ -105,7 +105,7 @@ markup:
 <div class="about-section">
       <h2 class="section-title">✨ 博客目的</h2>
       <p class="section-text">
-        这个博客主要用于记录我从开始学习到找到第一份实习的心路历程，分享我的学习心得和技术成长。希望通过这个平台，与更多志同道合的朋友交流学习，共同进步！
+        这个博客主要用于记录我从开始学习到找到第一份实习的心路历程。
       </p>
     </div>
   </div>
