@@ -1377,7 +1377,7 @@ enable = true
 # whether to keep the static table of the contents in front of the post
 keepStatic = false
 # whether to make the table of the contents in the sidebar automatically collapsed
-auto = true
+auto = false
 # FixIt 0.2.13 | NEW position of TOC ["left", "right"]
 position = "right"
 # FixIt 0.3.12 | NEW supersede `markup.tableOfContents` settings
