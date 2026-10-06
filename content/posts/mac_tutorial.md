@@ -1,6 +1,6 @@
 ---
 title: mac配置教程
-date: 2026-04-29T20:10:59+08:00
+date: 2026-10-7T00:10:59+08:00
 slug: 0d54685
 draft: false
 author:
